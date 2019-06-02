@@ -21,7 +21,10 @@
   }
 
 
-
+  .login{
+    vertical-align: middle;
+    text-align: center;
+  }
   .loginContainer{
     position: relative;
     display: block;
