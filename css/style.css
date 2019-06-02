@@ -1,0 +1,22 @@
+  html{
+    scroll-behavior: smooth;
+  
+  }
+  
+  body {
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Montserrat';
+    font-weight: 300;
+    height: 100%;
+    width: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga" on;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; 
+  
+  }
+
+
