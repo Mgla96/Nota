@@ -4,26 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<link rel="stylesheet" href="home.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 <link rel="stylesheet" href="css/style.css">
+
+<link href="https://fonts.googleapis.com/css?family=Muli|Playfair+Display|Poppins|Raleway&display=swap" rel="stylesheet">
+
 <title>Nota</title>
 </head>
 <body>
 
 
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Help</a>
+    <a href="#">Log Out</a>
+  </div>
 
 
+  <div id="main">
+  	<a class="navbar-brand" style="font-size:10vh;font-family:Playfair Display;padding-top:0vh;margin-top:-40px;color:black;" href="#">nota</a>
 
+  	<h id="intro" style="font-family: Raleway;"> <center> Choose a quarter to find your class: </center> </h>
 
+  	<img id="menu" onclick="openNav()" src="../Nota/menu.png">
 
+  	<div class="container9">
+    	<a href="#"> <img src="../Nota/fall.png" class="image9"> </a>
+    	<a href="#"> <div class="overlay9"> </div> </a>
+  	</div>
 
+  	<div class="container1">
+    	<a href="#"> <img src="../Nota/winter.png" class="image1"> </a>
+    	<a href="#"> <div class="overlay1"> </div> </a>
+  	</div>
 
+  	<div class="container2">
+    	<a href="#"> <img src="../Nota/spring.png" class="image2"> </a>
+    	<a href="#"> <div class="overlay2"> </div> </a>
+  	</div>
 
-    
+  	<div class="container3">
+    	<a href="#"> <img src="../Nota/summer.png" class="image3"> </a>
+    	<a href="#"> <div class="overlay3"> </div> </a>
+  	</div>
+  </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "300px";
+    //document.getElementById("main").style.marginLeft = "-100px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    //document.getElementById("main").style.marginLeft = "0";
+  }
+
+</script>
+
 </body>
 </html>
