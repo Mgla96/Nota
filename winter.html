@@ -55,7 +55,7 @@
     <div class="col">
     	 <div class="col-md-4 mb-3">
       <div class="input-group" style="width:50vh;">
-  		<input type="text" class="form-control" id="myInput1"  onkeyup="myFunction1()" aria-label="Text input with dropdown button" placeholder="Enter profressor's name">
+  		<input type="text" class="form-control" id="myInput1"  onkeyup="myFunction()" aria-label="Text input with dropdown button" placeholder="Enter profressor's name">
   			<div class="input-group-append">
     			 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     			 	See All
@@ -147,37 +147,21 @@ function closeNav() {
 
 <script>
 function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
+  var input, input1, filter, filter1, table, tr, td, tl, i, txtValue, txtValue1;
   input = document.getElementById("myInput");
+  input1 = document.getElementById("myInput1");
   filter = input.value.toUpperCase();
+  filter1 = input1.value.toUpperCase()
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
 
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
+    tl = tr[i].getElementsByTagName("td")[1];
+    if (td && tl) {
       txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    } 
-  }
-}
-
-function myFunction1() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput1");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      txtValue1 = tl.textContent || tl.innerText
+      if ((txtValue.toUpperCase().indexOf(filter) > -1) && (txtValue1.toUpperCase().indexOf(filter1) > -1)) {
         tr[i].style.display = "";
       } else {
         tr[i].style.display = "none";
