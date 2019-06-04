@@ -1,4 +1,4 @@
-/*fall style page*/
+/*winter style page*/
 * {
   box-sizing: border-box;
 }
@@ -67,7 +67,7 @@ body {
 #intro {
   font-family: "Playfair Display";
   padding-top:0px;
-	font-size: 15vh;
+  font-size: 15vh;
 }
 
 .links {
