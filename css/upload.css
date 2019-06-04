@@ -1,0 +1,24 @@
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: "Poppins";
+}
+
+#intro {
+  font-family: "Playfair Display";
+  padding-top:0px;
+	font-size: 15vh;
+	margin-bottom: 40px;
+}
+
+#quarter-group {
+	width: 100%;
+}
+
+.large-label {
+	font-size: x-large;
+}
+
+.week-button-group {
+	width: 100%;
+}
