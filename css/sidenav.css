@@ -27,7 +27,7 @@
 .sidenav .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
+  right: 0;
   font-size: 36px;
   margin-left: 50px;
 }
@@ -37,8 +37,8 @@
   .sidenav a {font-size: 18px;}
 }
 
-.main-container {
-	transition: margin-left .5s;
+#main {
+	transition: margin-right .5s;
 	padding: 16px;
 }
 
