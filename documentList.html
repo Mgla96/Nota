@@ -1,29 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-<link rel="stylesheet" href="css/style.css">
-<title>Nota</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/sidenav.css">
+		<link rel="stylesheet" href="css/documentList.css">
+	</head>
+	<body>
+
+		<title>Nota</title>
+
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="#">Home</a>
+			<a href="#">About</a>
+			<a href="#">Help</a>
+			<a href="#">Log Out</a>
+		</div>
+
+		<a class="navbar-brand" style="font-size:7vh;font-family:Playfair Display;margin-top:-40px;color:black;padding-bottom:0px padding-top:0px;" href="#">nota</a>
+
+			<img id="menu" onclick="openNav()" src="images/menu.png">
+
+		<div id="main">
+			<h2 id="intro"> <center>Notes for [Class Name]</center> </h2>
 
 
+			<div class="container main-container">
 
+				<table id="myTable" class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col">Week</th>
+							<th scope="col">Monday</th>
+							<th scope="col">Tuesday</th>
+							<th scope="col">Wednesday</th>
+							<th scope="col">Thursday</th>
+							<th scope="col">Friday</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">1</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th scope="row">4</th>
+							<th></th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th scope="row">5</th>
+							<th></th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th scope="row">6</th>
+							<th></th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th scope="row">7</th>
+							<th></th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th scope="row">8</th>
+							<th></th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th scope="row">9</th>
+							<th></th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th scope="row">10</th>
+							<th></th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		<script>
+			function openNav() {
+				document.getElementById("mySidenav").style.width = "250px";
+				document.getElementById("main").style.marginRight = "250px";
+			}
 
+function closeNav() {
+	document.getElementById("mySidenav").style.width = "0";
+	document.getElementById("main").style.marginRight = "0";
+}
 
+		var availableNotes = [
+			[-1, 1, -1, 1, -1],
+			[-1, 0, -1, 0, -1],
+			[-1, 1, -1, 1, -1],
+			[-1, 0, -1, 1, -1],
+			[-1, 1, -1, 1, -1],
+			[-1, 1, -1, 1, -1],
+			[-1, 1, -1, 0, -1],
+			[-1, 0, -1, 1, -1],
+			[-1, 1, -1, 0, -1],
+			[-1, 1, -1, 1, -1],
+		];
 
-
-
-
-    
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
-</body>
+		var table = document.getElementById("myTable");
+		for (var i = 1, row; row = table.rows[i]; i++) {
+			for (var j = 0, col; col = row.cells[j]; j++) {
+				if(availableNotes[i-1][j] == 0) {
+					col.innerHTML = '<center><button type="button" class="btn btn-danger m-2">Upload Notes</button></center>';
+				} else if (availableNotes[i-1][j] > 0) {
+					col.innerHTML = '<center><button type="button" class="btn btn-primary m-2">Upload Notes</button><button type="button" class="btn btn-primary m-2">View Notes</button></center>';
+				}
+			}
+		}
+		</script>
+	</body>
 </html>
