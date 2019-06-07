@@ -54,7 +54,7 @@ var firebaseConfig = {
             <i class="fa${restaurants[i].rating<5?'r':''} fa-star "></i>
           </div>
           <p class="card-text">
-            ${restaurants[i].descriprion}
+            ${restaurants[i].description}
           </p>
           <p class="card-text">
             <small class="text-muted">Last updated 3 mins ago</small>
