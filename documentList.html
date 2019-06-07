@@ -36,15 +36,15 @@
 					<thead>
 						<tr>
 							<th scope="col">Week</th>
-							<th scope="col">Monday</th>
-							<th scope="col">Tuesday</th>
-							<th scope="col">Wednesday</th>
-							<th scope="col">Thursday</th>
-							<th scope="col">Friday</th>
+							<th scope="col">Mon</th>
+							<th scope="col">Tue</th>
+							<th scope="col">Wed</th>
+							<th scope="col">Thu</th>
+							<th scope="col">Fri</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
+						<tr class="clickable collapsed" data-toggle="collapse" data-target=".row-1" aria-expanded="false" aria-controls=".row-1">
 							<th scope="row">1</th>
 							<td></td>
 							<td></td>
@@ -52,7 +52,7 @@
 							<td></td>
 							<td></td>
 						</tr>
-						<tr>
+						<tr class="clickable collapsed" data-toggle="collapse" data-target=".row-2" aria-expanded="false" aria-controls=".row-2">
 							<th scope="row">2</th>
 							<td></td>
 							<td></td>
@@ -60,7 +60,7 @@
 							<td></td>
 							<td></td>
 						</tr>
-						<tr>
+						<tr class="clickable collapsed" data-toggle="collapse" data-target=".row-3" aria-expanded="false" aria-controls=".row-3">
 							<th scope="row">3</th>
 							<td></td>
 							<td></td>
@@ -68,69 +68,61 @@
 							<td></td>
 							<td></td>
 						</tr>
-						<tr>
+						<tr class="clickable collapsed" data-toggle="collapse" data-target=".row-4" aria-expanded="false" aria-controls=".row-4">
 							<th scope="row">4</th>
-							<th></th>
 							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>
 						</tr>
-						<tr>
+						<tr class="clickable collapsed" data-toggle="collapse" data-target=".row-5" aria-expanded="false" aria-controls=".row-5">
 							<th scope="row">5</th>
-							<th></th>
 							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>
 						</tr>
-						<tr>
+						<tr class="clickable collapsed" data-toggle="collapse" data-target=".row-6" aria-expanded="false" aria-controls=".row-6">
 							<th scope="row">6</th>
-							<th></th>
 							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>
 							<td></td>
-						</tr>
-						<tr>
-							<th scope="row">7</th>
-							<th></th>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<th scope="row">8</th>
-							<th></th>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<th scope="row">9</th>
-							<th></th>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<th scope="row">10</th>
-							<th></th>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
+							<tr class="clickable collapsed" data-toggle="collapse" data-target=".row-7" aria-expanded="false" aria-controls=".row-7">
+								<th scope="row">7</th>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="clickable collapsed" data-toggle="collapse" data-target=".row-8" aria-expanded="false" aria-controls=".row-8">
+								<th scope="row">8</th>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="clickable collapsed" data-toggle="collapse" data-target=".row-9" aria-expanded="false" aria-controls=".row-9">
+								<th scope="row">9</th>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="clickable collapsed" data-toggle="collapse" data-target=".row-10" aria-expanded="false" aria-controls=".row-10">
+								<th scope="row">10</th>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
 					</tbody>
 				</table>
 			</div>
@@ -143,36 +135,56 @@
 			function openNav() {
 				document.getElementById("mySidenav").style.width = "250px";
 				document.getElementById("main").style.marginRight = "250px";
+				document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 			}
 
 function closeNav() {
 	document.getElementById("mySidenav").style.width = "0";
 	document.getElementById("main").style.marginRight = "0";
+	document.body.style.backgroundColor = "#f1f1f1";
 }
 
-		var availableNotes = [
-			[-1, 1, -1, 1, -1],
-			[-1, 0, -1, 0, -1],
-			[-1, 1, -1, 1, -1],
-			[-1, 0, -1, 1, -1],
-			[-1, 1, -1, 1, -1],
-			[-1, 1, -1, 1, -1],
-			[-1, 1, -1, 0, -1],
-			[-1, 0, -1, 1, -1],
-			[-1, 1, -1, 0, -1],
-			[-1, 1, -1, 1, -1],
-		];
+function updateNavWidth(x) {
+	if(x.matches) {
+		document.getElementsByClassName('sidenav')[0].style.width = "350px";
+		document.body.style.backgroundColor = "#f1f1f1";
+	} else {
+		document.getElementsByClassName('sidenav')[0].style.width = "0";
+	}
+}
+var x = window.matchMedia("(min-width: 576px)");
+updateNavWidth(x);
+x.addListener(updateNavWidth);
 
-		var table = document.getElementById("myTable");
-		for (var i = 1, row; row = table.rows[i]; i++) {
-			for (var j = 0, col; col = row.cells[j]; j++) {
-				if(availableNotes[i-1][j] == 0) {
-					col.innerHTML = '<center><button type="button" class="btn btn-danger m-2">Upload Notes</button></center>';
-				} else if (availableNotes[i-1][j] > 0) {
-					col.innerHTML = '<center><button type="button" class="btn btn-primary m-2">Upload Notes</button><button type="button" class="btn btn-primary m-2">View Notes</button></center>';
-				}
-			}
+		</script>
+		<script>
+			var availableNotes = [
+				[-1, 1, -1, 1, -1],
+				[-1, 0, -1, 0, -1],
+				[-1, 1, -1, 1, -1],
+				[-1, 0, -1, 1, -1],
+				[-1, 1, -1, 1, -1],
+				[-1, 1, -1, 1, -1],
+				[-1, 1, -1, 0, -1],
+				[-1, 0, -1, 1, -1],
+				[-1, 1, -1, 0, -1],
+				[-1, 1, -1, 1, -1],
+			];
+
+var table = document.getElementById("myTable");
+for (var i = 1, row; row = table.rows[i]; i++) {
+	for (var j = 1, col; col = row.cells[j]; j++) {
+		if(availableNotes[i-1][j-1] == 0) {
+			col.innerHTML = '<center><button type="button" class="btn btn-danger m-2 collapse row-'+i+'" data-parent="#myTable">Upload Notes</button></center>';
+			col.classList.add("table-danger");
+		} else if (availableNotes[i-1][j-1] > 0) {
+			col.innerHTML = '<center><button type="button" class="btn btn-primary m-2 collapse row-'+i+'" data-parent="#myTable">Upload Notes</button><button type="button" class="btn btn-primary m-2 collapse row-'+i+'" data-parent="#myTable">View Notes</button></center>';
+			col.classList.add("table-success");
+		} else {
+			col.classList.add("table-warning");
 		}
+	}
+}
 		</script>
 	</body>
 </html>

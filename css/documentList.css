@@ -14,3 +14,7 @@ body {
 th {
 	text-align: center;
 }
+
+th, td {
+	cursor: pointer;
+}
