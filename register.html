@@ -36,27 +36,34 @@
   <div class="main">
     <div class="col-md-6 col-sm-12">
       <div class="login-form">
-        <form>
+        <form action="" name="registerForm" onSubmit="authRegister(event)">
           <div class="form-group">
-            <label style="font-size: 2.5vh;font-family:Poppins;">Email</label>
-            <input type="password" class="form-control" placeholder="Enter password">
+            <label style="font-size: 2.5vh;font-family:Poppins;" for="register_email">Email</label>
+            <input type="text" id="register_email" class="form-control validate" placeholder="Enter password">
            
           </div>
-          <div class="form-group">
+        <!--
+            <div class="form-group">
             <label style="font-size: 2.5vh;font-family:Poppins;">Username</label>
             <input type="text" class="form-control" placeholder="Enter username">
           </div>
+
+        -->
+    
           <div class="form-group">
-            <label style="font-size: 2.5vh;font-family:Poppins;">Password</label>
-            <input type="password" class="form-control" placeholder="Enter password">
+            <label style="font-size: 2.5vh;font-family:Poppins;" for="register_passwrord">Password</label>
+            <input type="password" id="register_password" class="form-control validate" placeholder="Enter password">
             
           </div>
-          <div class="form-group">
+
+          <!--
+            <div class="form-group">
             <label style="font-size: 2.5vh;font-family:Poppins;">Confirm Password</label>
             <input type="password" class="form-control" placeholder="Enter password">
            </div>
+          -->
 
-          <button type="submit" class="btn btn-secondary" style="color:white;font-family:Poppins;"> <a href="login(typeII).html" style="color:white"> LOGIN </a> </button>
+          <button class="btn btn-secondary" style="color:white;font-family:Poppins;"> <a href="login(typeII).html" style="color:white"> LOGIN </a> </button>
           <button type="submit" class="btn btn-black" style="margin-left: 10px;font-family:Poppins"><a href="" style="color:white;">REGISTER </a></button>
         </form>
       </div>
@@ -76,6 +83,9 @@
    <script src="/__/firebase/6.1.1/firebase-firestore.js"></script>
 
    <script src="/__/firebase/init.js"></script>
+
+  
+   <script  src="./database.js"></script>
 
 </body>
 
