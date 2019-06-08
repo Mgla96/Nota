@@ -1,19 +1,23 @@
 // Your web app's Firebase configuration
-var firebaseConfig = {
-    apiKey: "AIzaSyCooKBIXHDvoOuIHY6E_--6bH0m71K6gPY",
-    authDomain: "cs185restaurants.firebaseapp.com",
-    databaseURL: "https://cs185restaurants.firebaseio.com",
-    projectId: "cs185restaurants",
-    storageBucket: "cs185restaurants.appspot.com",
-    messagingSenderId: "629525425559",
-    appId: "1:629525425559:web:ba9e23d6036951f7"
-  };
-  
+const firebaseConfig = {
+  apiKey: "AIzaSyDJRrNJmGy9PeHeHmynJGH2ZkgUR0KUo84",
+  authDomain: "nota-f9686.firebaseapp.com",
+  databaseURL: "https://nota-f9686.firebaseio.com",
+  projectId: "nota-f9686",
+  storageBucket: "nota-f9686.appspot.com",
+  messagingSenderId: "131432847743",
+  appId: "1:131432847743:web:ac2dae70c0c43677"
+};
   
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   var db = firebase.firestore();
   
+  
+
+
+
+
   var restaurants = [];
   db.collection("restaurants")
     .get()
@@ -66,3 +70,4 @@ var firebaseConfig = {
       container.innerHTML += htmlstring;
     }
   }
+
