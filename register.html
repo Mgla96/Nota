@@ -35,11 +35,11 @@
 
   <div class="main">
     <div class="col-md-6 col-sm-12">
-      <div class="login-form">
+      <div class="login-form" id="firebase-token">
         <form action="" name="registerForm" onSubmit="authRegister(event)">
-          <div class="form-group">
+          <div class="input-field form-group">
             <label style="font-size: 2.5vh;font-family:Poppins;" for="register_email">Email</label>
-            <input type="text" id="register_email" class="form-control validate" placeholder="Enter password">
+            <input type="text" id="register_email" class="form-control validate" placeholder="Enter Email" required>
            
           </div>
         <!--
@@ -50,9 +50,9 @@
 
         -->
     
-          <div class="form-group">
-            <label style="font-size: 2.5vh;font-family:Poppins;" for="register_passwrord">Password</label>
-            <input type="password" id="register_password" class="form-control validate" placeholder="Enter password">
+          <div class="intput-field form-group">
+            <label style="font-size: 2.5vh;font-family:Poppins;" for="register_password">Password</label>
+            <input type="password" id="register_password" class="form-control validate" placeholder="Enter Password" required>
             
           </div>
 
@@ -77,12 +77,10 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-   <script src="/__/firebase/6.1.1/firebase-app.js"></script>
-   <!-- Add Firebase products that you want to use -->
-   <script src="/__/firebase/6.1.1/firebase-auth.js"></script>
-   <script src="/__/firebase/6.1.1/firebase-firestore.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
 
-   <script src="/__/firebase/init.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
 
   
    <script  src="./database.js"></script>
