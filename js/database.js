@@ -8,14 +8,19 @@ const firebaseConfig = {
   messagingSenderId: "131432847743",
   appId: "1:131432847743:web:ac2dae70c0c43677"
 };
-  
-  // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  var db = firebase.firestore();
+  //var db = firebase.firestore();
+
   
+  this.firebaseToken = document.querySelector("#firebase-token");
+  this.firebaseToken.innerHTML = "Welcome !";
+
+
+
 
   //User SignUp
   function authRegister(event) {
+    window.alert("got to authRegister");
     event.preventDefault();
     var registerForm = $("form[name='registerForm']");
     var reg_email = registerForm.find('#register_email').val();
@@ -24,16 +29,19 @@ const firebaseConfig = {
     firebase
       .auth()
       .createUserWithEmailAndPassword(reg_email, reg_password)
-      .then(function () {
-        this.firebaseToken.innerHTML = "Registered successfully !";
+      .then(function (response) {
+        this.firebaseToken.innerHTML = "Registered successfully! Check your e-mail for account verification!";
+        sendVerificationEmail(response.user);
       })
       .catch(function(err) {
         alert(err.message);
+        console.log(err.code, err.message);
       })
   }
   
   // User SignIn
   function authLogin(event) {
+   // alert("called authLogin");
     event.preventDefault();
     var loginForm = $("form[name='loginForm']");
     var log_email = loginForm.find('#login_email').val();
@@ -43,12 +51,13 @@ const firebaseConfig = {
       .auth()
       .signInWithEmailAndPassword(log_email, log_password)
       .then(function () {
-        this.firebaseToken.innerHTML = "Sign-in Successful !";
+        this.firebaseToken.innerHTML = "Sign-in Successful!";
         console.log('sign in successful !');
         // outputFirebaseData();
       })
       .catch(function(err) {
         alert(err.message);
+        console.log(err.code, err.message);
       });
   }
   
@@ -57,11 +66,20 @@ const firebaseConfig = {
   }
 
 
+  function passwordReset(){
+    var auth = firebase.auth();
+    var emailAddress = "user@example.com";
 
+    auth.sendPasswordResetEmail(emailAddress).then(function() {
+      // Email sent.
+    }).catch(function(error) {
+      // An error happened.
+    });
+  }
   
 
 
-
+/*
 
   var restaurants = [];
   db.collection("restaurants")
@@ -116,3 +134,4 @@ const firebaseConfig = {
     }
   }
 
+*/

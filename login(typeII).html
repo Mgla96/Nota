@@ -20,7 +20,6 @@
 
 
 
-
 </head>
 
 <body>
@@ -38,19 +37,19 @@
 
   <div class="main">
     <div class="col-md-6 col-sm-12">
-      <div class="login-form">
-        <form>
+      <div class="login-form" id="firebase-token">
+        <form action="" name="loginForm" onSubmit="authLogin(event)">
           <!--
           <div class="form-group">
             <label style="font-size: 2.5vh;font-family:Poppins;">Username</label>
             <input type="text" class="form-control" placeholder="Enter username">
           </div>
           -->
-          <div class="form-group">
+          <div class="input-field form-group">
               <label style="font-size: 2.5vh;font-family:Poppins;">Email</label>
               <input type="text" id="login_email" class="form-control validate" placeholder="Enter Email">
             </div>
-          <div class="form-group">
+          <div class="input-field form-group">
             <label style="font-size: 2.5vh;font-family:Poppins;">Password</label>
             <input type="password" id="login_password" class="form-control validate" placeholder="Enter Password">
             <p style="font-size: 1.3vh;line-height: 3;"> • forgot <a href="forgotUser.html" style="color:red;"><b>username</b></a> or <a href="resetPassword.html" style="color:red;"> <b> password? </b> </a> </p>
@@ -71,13 +70,12 @@
 
 
 
-   <script src="/__/firebase/6.1.1/firebase-app.js"></script>
-   <!-- Add Firebase products that you want to use -->
-   <script src="/__/firebase/6.1.1/firebase-auth.js"></script>
-   <script src="/__/firebase/6.1.1/firebase-firestore.js"></script>
+   <script defer src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
 
-   <script src="/__/firebase/init.js"></script>
+   <script defer src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+   <script defer src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
 
+  
    <script  src="./database.js"></script>
 </body>
 
