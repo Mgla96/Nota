@@ -20,7 +20,7 @@ const firebaseConfig = {
 
   //User SignUp
   function test(){
-   alert("test");
+   window.alert("test");
   }
   function authRegister(event) {
     event.preventDefault();
@@ -32,8 +32,20 @@ const firebaseConfig = {
       .auth()
       .createUserWithEmailAndPassword(reg_email, reg_password)
       .then(function (response) {
-        alert("Registered successfully! Check your e-mail for account verification!")
-        //this.firebaseToken.innerHTML = "Registered successfully! Check your e-mail for account verification!";
+        alert("Registered successfully! Check your e-mail for account verification!");
+
+        /*
+        var user = firebase.auth().currentUser;
+        user.sendEmailVerification().then(function() {
+          
+        // Email sent.
+        window.alert("test");
+        }).catch(function(error) {
+        // An error happened.
+        window.alert("error");
+        });
+        */
+        //this .firebaseToken.innerHTML = "Registered successfully! Check your e-mail for account verification!";
         //sendEmailVerification();
       })
       .catch(function(err) {
@@ -54,7 +66,8 @@ const firebaseConfig = {
       .auth()
       .signInWithEmailAndPassword(log_email, log_password)
       .then(function () {
-        alert("Sign in successful!")
+        alert("Sign in successful!");
+
         //this.firebaseToken.innerHTML = "Sign-in Successful!";
        // console.log('sign in successful !');
         // outputFirebaseData();
@@ -71,18 +84,41 @@ const firebaseConfig = {
 
 
   function passwordReset(){
-   // event.preventDefault();
+
     var forgotPasswordForm = $("form[name='forgotPasswordForm']");
-    String email = forgotPasswordForm.find('#check_email').val();
+    var email = forgotPasswordForm.find('#check_email').val();
+    //window.alert(email);
+    //String emailString = email.toString();
+
+    //email var works but this sendPasswordResetEmail function doesn't work some reason
 
     firebase
-    .auth().sendPasswordResetEmail(email).then(function() {
-      alert("Check your email to recover your password."); // Email sent.
-    }).catch(function(err) {
+    .auth()
+    .sendPasswordResetEmail(email)
+    .then(function () {
+      alert("Check your email to recover your password.");
+
+    })
+    .catch(function(err) {
       alert(err.message);
+     
     });
+
+  }
+
+  function signOut(){
+    firebase.auth().signOut().then(function() {
+      // Sign-out successful.
+      console.log('User Logged Out!');
+    }).catch(function(error) {
+      // An error happened.
+      console.log(error);
+    });
+
   }
   
+
+
 
   auth.onAuthStateChanged(user => {
     if(user) {
