@@ -12,26 +12,30 @@ const firebaseConfig = {
   //var db = firebase.firestore();
 
   
+  /*
   this.firebaseToken = document.querySelector("#firebase-token");
   this.firebaseToken.innerHTML = "Welcome !";
-
-
+  */
 
 
   //User SignUp
+  function test(){
+   alert("test");
+  }
   function authRegister(event) {
-    window.alert("got to authRegister");
+    alert("got to authRegister");
     event.preventDefault();
     var registerForm = $("form[name='registerForm']");
     var reg_email = registerForm.find('#register_email').val();
     var reg_password = registerForm.find('#register_password').val();
-  
+    
     firebase
       .auth()
       .createUserWithEmailAndPassword(reg_email, reg_password)
-      .then(function (response) {
-        this.firebaseToken.innerHTML = "Registered successfully! Check your e-mail for account verification!";
-        sendVerificationEmail(response.user);
+      .then(function () {
+        alert("Registered successfully! Check your e-mail for account verification!")
+        //this.firebaseToken.innerHTML = "Registered successfully! Check your e-mail for account verification!";
+        //sendVerificationEmail(response.user);
       })
       .catch(function(err) {
         alert(err.message);
