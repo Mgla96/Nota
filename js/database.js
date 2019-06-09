@@ -71,13 +71,15 @@ const firebaseConfig = {
 
 
   function passwordReset(){
-    var auth = firebase.auth();
-    var emailAddress = "user@example.com";
+   // event.preventDefault();
+    var forgotPasswordForm = $("form[name='forgotPasswordForm']");
+    String email = forgotPasswordForm.find('#check_email').val();
 
-    auth.sendPasswordResetEmail(emailAddress).then(function() {
-      // Email sent.
-    }).catch(function(error) {
-      // An error happened.
+    firebase
+    .auth().sendPasswordResetEmail(email).then(function() {
+      alert("Check your email to recover your password."); // Email sent.
+    }).catch(function(err) {
+      alert(err.message);
     });
   }
   
