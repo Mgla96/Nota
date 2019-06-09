@@ -11,7 +11,7 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   //var db = firebase.firestore();
 
-  
+  var auth = firebase.auth();
   /*
   this.firebaseToken = document.querySelector("#firebase-token");
   this.firebaseToken.innerHTML = "Welcome !";
@@ -23,7 +23,6 @@ const firebaseConfig = {
    alert("test");
   }
   function authRegister(event) {
-    alert("got to authRegister");
     event.preventDefault();
     var registerForm = $("form[name='registerForm']");
     var reg_email = registerForm.find('#register_email').val();
@@ -32,10 +31,10 @@ const firebaseConfig = {
     firebase
       .auth()
       .createUserWithEmailAndPassword(reg_email, reg_password)
-      .then(function () {
+      .then(function (response) {
         alert("Registered successfully! Check your e-mail for account verification!")
         //this.firebaseToken.innerHTML = "Registered successfully! Check your e-mail for account verification!";
-        //sendVerificationEmail(response.user);
+        //sendEmailVerification();
       })
       .catch(function(err) {
         alert(err.message);
@@ -55,8 +54,9 @@ const firebaseConfig = {
       .auth()
       .signInWithEmailAndPassword(log_email, log_password)
       .then(function () {
-        this.firebaseToken.innerHTML = "Sign-in Successful!";
-        console.log('sign in successful !');
+        alert("Sign in successful!")
+        //this.firebaseToken.innerHTML = "Sign-in Successful!";
+       // console.log('sign in successful !');
         // outputFirebaseData();
       })
       .catch(function(err) {
@@ -82,7 +82,11 @@ const firebaseConfig = {
   }
   
 
-
+  auth.onAuthStateChanged(user => {
+    if(user) {
+      window.location = 'index.html'; //After successful login, user will be redirected to home.html
+    }
+  });
 /*
 
   var restaurants = [];
