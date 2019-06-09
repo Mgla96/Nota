@@ -12,6 +12,7 @@
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Muli|Playfair+Display|Poppins|Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="css/sidenav.css">
 	<link rel="stylesheet" href="css/notes.css">
 
 	<link href="https://fonts.googleapis.com/css?family=Muli|Playfair+Display|Poppins|Raleway&display=swap" rel="stylesheet">
@@ -20,58 +21,62 @@
 </head>
 <body>
 
+    <!--side navigation-->
 	<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Help</a>
-    <a href="#">Log Out</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Help</a>
+        <a href="#">Log Out</a>
   	</div>
 
-  	<a class="navbar-brand" style="font-size:7vh;font-family:Playfair Display;margin-top:-40px;color:black;padding-bottom:0px
-  	padding-top:0px;" href="#">nota</a>
+    <!--nota title in nav bar-->
+  	<a class="navbar-brand" id="notaTitle" href="#">nota</a>
 
-  <h2 id="intro"> <center>  </center> </h2>
+  <h2 id="title"> <center>  </center> </h2>
 
-  <img id="menu" onclick="openNav()" src="images/menu.png">
+  <!--menu icon-->
+  <img id="menuIcon" onclick="openNav()" src="images/menu.png">
 
+  <!--date search bar for images-->
   <form>
-  <div class="form-group row">
-    <label for="staticEmail" style="font-size:2vh;" class="col-sm-2 col-form-label"> Enter date: </label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="myInput" style="width:50vh;" aria-label="Text input with dropdown button" placeholder="mm/dd">
+    <div class="form-group row">
+        <label for="staticEmail" style="font-size:2vh;" class="col-sm-2 col-form-label"> Enter date: </label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="myInput" style="width:50vh;" placeholder="mm/dd">
+        </div>
     </div>
-  </div>
-	</form>
+  </form>
   
+  <!--catalog of all the notes-->
 	<div id="images">
 		<center>
 		<div id="container" style="height:70vh;overflow:auto;background-color:#FAFAFA;">
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="06142019" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="Ethereum" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="Ripple" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="Bitcoin Cash" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="Cardano" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="NEM" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="06142020" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="Stellar Lumens" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="06142019" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="Ethereum" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="06142019" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="Ethereum" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="Ripple" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="Bitcoin Cash" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="Cardano" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="NEM" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="06142020" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="Stellar Lumens" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="06142019" width=300></a>
-            <a href="https://example.com"><img src="images/notes.png" style="margin-left:10px;margin-right:10px;margin-bottom:10px;" alt="Ethereum" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="06142019" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Ethereum" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Ripple" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Bitcoin Cash" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Cardano" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="NEM" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="06142020" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Stellar Lumens" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="06142019" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Ethereum" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="06142019" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Ethereum" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Ripple" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Bitcoin Cash" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Cardano" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="NEM" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="06142020" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Stellar Lumens" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="06142019" width=300></a>
+            <a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Ethereum" width=300></a>
         </div>
-    </center>
+        </center>
 	</div> 
 
-
+    <!--opens and closes side navigation-->
 	<script>
 	function openNav() {
    		document.getElementById("mySidenav").style.width = "250px";
@@ -82,6 +87,7 @@
 	}
 	</script>
 
+    <!--script for searching images by date-->
 	<script>
 	$("#myInput").keyup(function() {
     	var str = $.trim(this.value);
@@ -95,12 +101,6 @@
     	}
 	});
 	</script>
-
-    <script>
-        $('#datepicker').datepicker({
-            uiLibrary: 'bootstrap4'
-        });
-    </script>
 
 </body>
 </html>
