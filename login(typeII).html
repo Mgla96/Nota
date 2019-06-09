@@ -46,15 +46,15 @@
           </div>
           -->
           <div class="input-field form-group">
-              <label style="font-size: 2.5vh;font-family:Poppins;">Email</label>
+              <label style="font-size: 2.5vh;font-family:Poppins;" for="login_email">Email</label>
               <input type="text" id="login_email" class="form-control validate" placeholder="Enter Email">
             </div>
           <div class="input-field form-group">
-            <label style="font-size: 2.5vh;font-family:Poppins;">Password</label>
+            <label style="font-size: 2.5vh;font-family:Poppins;" for="login_password">Password</label>
             <input type="password" id="login_password" class="form-control validate" placeholder="Enter Password">
             <p style="font-size: 1.3vh;line-height: 3;"> • forgot <a href="forgotUser.html" style="color:red;"><b>username</b></a> or <a href="resetPassword.html" style="color:red;"> <b> password? </b> </a> </p>
           </div>
-          <button style="color: white;" type="submit" class="btn btn-black" style="color:white;font-family:Poppins;">LOGIN</button>
+          <button type="submit" value="Submit" class="btn btn-black" style="color:white;font-family:Poppins;">LOGIN</button>
           <button class="btn btn-secondary" style="margin-left: 10px;font-family:Poppins"><a href="register.html" style="color:white;">REGISTER</a></button>
         </form>
       </div>
@@ -70,13 +70,11 @@
 
 
 
-   <script defer src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
-
-   <script defer src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
-   <script defer src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
-
-  
+   <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
    <script  src="./js/database.js"></script>
+
 </body>
 
 </html>
