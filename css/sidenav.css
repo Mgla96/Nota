@@ -7,8 +7,9 @@
   right: 0;
   background-color: #111;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: width 0.5s;
   padding-top: 60px;
+  display: block;
 }
 
 .sidenav a {
@@ -16,25 +17,64 @@
   text-decoration: none;
   font-size: 25px;
   color: #818181;
-  display: block;
-  transition: 0.3s;
+  transition: width 0.3s;
+}
+
+.sidenav a.active {
+  color: #f1f1f1;
 }
 
 .sidenav a:hover {
   color: #f1f1f1;
 }
 
-.sidenav .closebtn {
+#closebtn {
   position: absolute;
+	padding: 0px 20px 0px 0px;
   top: 0;
   right: 0;
-  font-size: 36px;
-  margin-left: 50px;
+  font-size: 50px;
+  margin: -10px -10px 0px 50px;
 }
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+
+@media screen and (min-width: 576px) {
+	#menu {
+		display: none;
+	}
+	.sidenav {
+		background-color: unset;
+		position: absolute;
+		height: auto;
+		width: 350px;
+		padding-top: inherit;
+		display: flex;
+	}
+
+	.sidenav a {
+		padding: 0px 8px 0px 8px;
+		font-size: 20px;
+		color: #818181;
+		transition: 0.3s;
+	}
+
+	.sidenav a.active {
+		color: #818181;
+		border-bottom: 3px solid #111;
+	}
+
+	.sidenav a:hover {
+		color: #111;
+		border-bottom: 3px solid #111;
+	}
+	
+	#closebtn {
+		display: none;
+	}
 }
 
 #main {
@@ -46,7 +86,7 @@
   position: absolute;
   top: 0px;
   right: 0px;
-  width: 7vh;
-  height: 7vh;
-  cursor:pointer;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
