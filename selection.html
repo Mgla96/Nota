@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+<link rel="stylesheet" href="css/sidenav.css">
+<link rel="stylesheet" href="css/selection.css">
+
+<link href="https://fonts.googleapis.com/css?family=Muli|Playfair+Display|Poppins|Raleway&display=swap" rel="stylesheet">
+
+<title>Nota</title>
+</head>
+<body>
+
+  <!--side navigation-->
+  <div id="mySidenav" class="sidenav" style="font-family:Poppins;s">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="#">About</a>
+    <a href="#">Help</a>
+    <a href="#">Log Out</a>
+  </div>
+
+  <div id="main">
+  	<a class="navbar-brand" id="notaTitle" href="#">nota</a>
+  	<h id="title"> <center> Choose a quarter to find your class: </center> </h>
+  	<img id="menu" onclick="openNav()" src="images/menu.png">
+
+  	<div class="fall">
+    	<a href="#"> <img src="images/fall.png" class="image"> </a>
+    	<a href="#"> <div class="overlay" style="background-color: red;"> </div> </a>
+  	</div>
+  	<div class="winter">
+    	<a href="#"> <img src="images/winter.png" class="image"> </a>
+    	<a href="#"> <div class="overlay" style="background-color: blue;"> </div> </a>
+  	</div>
+  	<div class="spring">
+    	<a href="#"> <img src="images/spring.png" class="image"> </a>
+    	<a href="#"> <div class="overlay" style="background-color: green;"> </div> </a>
+  	</div>
+  	<div class="summer">
+    	<a href="#"> <img src="images/summer.png" class="image"> </a>
+    	<a href="#"> <div class="overlay" style="background-color: yellow;"> </div> </a>
+  	</div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "300px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  </script>
+
+</body>
+</html>
