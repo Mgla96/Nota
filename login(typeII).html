@@ -17,21 +17,15 @@
 
   <link href="https://fonts.googleapis.com/css?family=Muli|Playfair+Display|Poppins|Raleway&display=swap" rel="stylesheet">
 
-
-
-
 </head>
 
 <body>
 
-<!--img style="position: absolute;" src="../Nota/lines.jpg"-->
-
   <div class="sidenav">
     <div class="login-main-text">
-      <!--img style="width:35vh;margin-top: 5vh;" src="logo.png"-->
-      <h1 style="font-family:Playfair Display;margin-left:2vh;font-size:15vh;"><a href="index.html" style="color:white;">nota</a> </h1>
-      <h2 style="font-family:Poppins;margin-left:2vh;font-size:3.3vh;"> <br> Your all access pass to any class.</h2>
-      <p style="margin-left:2vh;font-size:2vh;margin-top:2vh;">Login or register here.</p>
+      <img style="width:35vh;margin-top: 5vh;" src="css/images/notalogoII.png">
+      <h2 id="forgotPassword"> <br> Your all access pass to any class.</h2>
+      <p id="enterEmail">Login or register here.</p>
     </div>
   </div>
 
@@ -39,12 +33,6 @@
     <div class="col-md-6 col-sm-12">
       <div class="login-form" id="firebase-token">
         <form action="" name="loginForm" onSubmit="authLogin(event)">
-          <!--
-          <div class="form-group">
-            <label style="font-size: 2.5vh;font-family:Poppins;">Username</label>
-            <input type="text" class="form-control" placeholder="Enter username">
-          </div>
-          -->
           <div class="input-field form-group">
               <label style="font-size: 2.5vh;font-family:Poppins;" for="login_email">Email</label>
               <input type="text" id="login_email" class="form-control validate" placeholder="Enter Email">
@@ -52,7 +40,7 @@
           <div class="input-field form-group">
             <label style="font-size: 2.5vh;font-family:Poppins;" for="login_password">Password</label>
             <input type="password" id="login_password" class="form-control validate" placeholder="Enter Password">
-            <p style="font-size: 1.3vh;line-height: 3;"> • forgot <a href="forgotUser.html" style="color:red;"><b>username</b></a> or <a href="resetPassword.html" style="color:red;"> <b> password? </b> </a> </p>
+            <p style="font-size: 1.3vh;line-height: 3;"> • forgot <a href="resetPassword.html" style="color:red;"> <b> password </b> </a> ? </p>
           </div>
           <button type="submit" value="Submit" class="btn btn-black" style="color:white;font-family:Poppins;">LOGIN</button>
           <button class="btn btn-secondary" style="margin-left: 10px;font-family:Poppins"><a href="register.html" style="color:white;">REGISTER</a></button>
@@ -62,7 +50,6 @@
   </div>
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js"></script>
-   <!--script src="./script.js"></script-->
 
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

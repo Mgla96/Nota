@@ -19,12 +19,10 @@
 			<a class="nav-link active" href="#">Home</a>
 			<a class="nav-link" href="#">About</a>
 			<a class="nav-link" href="#">Help</a>
-			<a class="nav-link" href="#">Log Out</a>
+			<a class="nav-link" href="login.html">Log Out</a>
 		</nav>
 
 		<a class="navbar-brand" style="font-size:7vh;font-family:Playfair Display;margin-top:-40px;color:black;padding-bottom:0px padding-top:0px;" href="#">nota</a>
-
-		<img id="menu" onclick="openNav()" src="images/menu.png">
 
 		<div id="main">
 			<div class="container">
@@ -74,28 +72,10 @@
 
 
 
-
-
-
-
-
-
-
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
 		<script>
-			function openNav() {
-				document.getElementById("mySidenav").style.width = "250px";
-				document.getElementById("main").style.marginRight = "250px";
-				document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-			}
-
-function closeNav() {
-	document.getElementById("mySidenav").style.width = "0";
-	document.getElementById("main").style.marginRight = "0";
-	document.body.style.backgroundColor = "#f1f1f1";
-}
 
 function updateNavWidth(x) {
 	closeNav();
