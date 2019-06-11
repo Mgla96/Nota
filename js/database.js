@@ -12,14 +12,12 @@ const firebaseConfig = {
   //var db = firebase.firestore();
   var auth = firebase.auth();
 
-
   //User SignUp
   function test(){
    window.alert("test");
   }
 
   function authRegister(event) {
-
     event.preventDefault();
     var registerForm = $("form[name='registerForm']");
     var reg_email = registerForm.find('#register_email').val();
@@ -37,7 +35,6 @@ const firebaseConfig = {
         console.log(err.code, err.message);
       });
   }
-  
   // User SignIn
   function authLogin(event) {
    // alert("called authLogin");
@@ -50,8 +47,7 @@ const firebaseConfig = {
       .auth()
       .signInWithEmailAndPassword(log_email, log_password)
       .then(function () {
-        alert("Sign in successful!");
-        
+        alert("Sign in successful!");    
     
       })
       .catch(function(err) {
@@ -59,13 +55,11 @@ const firebaseConfig = {
         console.log(err.code, err.message);
       });
   }
-  
   function outputFirebaseData() {
     this.firebaseToken.innerHTML = "Hello world";
   }
-
-
   /*
+
   function sendEmailVerification(data) {
     var user = firebase.auth().currentUser;
     var email = data.email || user.email;
@@ -73,10 +67,7 @@ const firebaseConfig = {
       url: window.location.href + '?email=' + user.email,
     });
   }
-
 */
-
-
 
 
   function passwordReset(){
@@ -87,7 +78,6 @@ const firebaseConfig = {
     //window.alert(email);
     //String emailString = email.toString();
     //email var works but this sendPasswordResetEmail function doesn't work some reason
-
     firebase
     .auth()
     .sendPasswordResetEmail(email)
@@ -110,29 +100,33 @@ const firebaseConfig = {
       // An error happened.
       console.log(error);
     });
-
   }
 
 
 
   auth.onAuthStateChanged(user => {
+    /*
     if(user) {
       window.location = 'index.html'; //After successful login, user will be redirected to home.html
     }
+    */
 
     if (user.emailVerified) {
-      alert('Email is verified');
+      console.log("email verified");
+      window.location = 'index.html'; //After successful login, user will be redirected to home.html
     }
     else {
-      alert('Email not verified');
-           
-      user.sendEmailVerification().then(function())
-        alert("sent email request");
-       })
-       .catch(function(err) {
-        alert(err.message);
-        
+      //alert('Email not verified');
+
+      auth.currentUser.sendEmailVerification().then(function(){
+        console.log("sent email request");
+      })
+      .catch(function(err){
+        console.log(err.message);
       });
-      
+
+      //alert('post email not verified');
     }
   });
+
+  //auth.currentUser.sendEmailVerification();
