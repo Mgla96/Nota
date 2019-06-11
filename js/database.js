@@ -19,7 +19,6 @@ function test() {
   window.alert("test");
 }
 
-
 function authRegister(event) {
   event.preventDefault();
   var registerForm = $("form[name='registerForm']");
@@ -53,17 +52,18 @@ function authLogin(event) {
     // ...
     // New sign-in will be persisted with session persistence.
     firebase
-    .auth()
-    .signInWithEmailAndPassword(log_email, log_password)
-    .then(function () {
-      alert("Sign in successful!");
-      window.location = 'index.html';
+      .auth()
+      .signInWithEmailAndPassword(log_email, log_password)
+      .then(function () {
+        alert("Sign in successful!");
+        console.log("signed in");
+        window.location = 'index.html';
 
-    })
-    .catch(function (err) {
-      alert(err.message);
-      console.log(err.code, err.message);
-    });
+      })
+      .catch(function (err) {
+        alert(err.message);
+        console.log(err.code, err.message);
+      });
 
   })
     .catch(function (error) {
@@ -74,10 +74,7 @@ function authLogin(event) {
     });
 
 
-  
 }
-
-
 
 function outputFirebaseData() {
   this.firebaseToken.innerHTML = "Hello world";
@@ -120,7 +117,6 @@ auth.onAuthStateChanged(user => {
     // User is signed in.
     console.log("user signed in from auth state");
 
-    
     if (!user.emailVerified) {
       user.sendEmailVerification().then(function () {
         console.log("sent email request");
@@ -128,24 +124,13 @@ auth.onAuthStateChanged(user => {
         .catch(function (err) {
           console.log(err.message);
         });
-  
+
     }
     else {
       console.log("email verified");
-    
-  
+
+
     }
-    //this.navCtrl.setRoot('index.html');
-    //window.location = 'index.html'; //After successful login, user will be redirected to home.html
-
-
-    /*
-    document.getElementById("welcomeHeader").innerHTML = "Welcome!";
-    document.getElementById("welcomeComment").innerHTML = "You are successfully signed in. You can now upload and download notes.";
-    document.getElementById("welcomeButton").innerHTML = "Sign Out";
-    document.getElementById("welcomeButton").href = "";
-    document.getElementById("welcomeButton").onclick=test;
-    */
 
   } else {
     // No user is signed in.
@@ -154,22 +139,5 @@ auth.onAuthStateChanged(user => {
   }
 
 
-  
-
-
-
-
-
 });
-
-/*
-auth.onIdTokenChanged(function(user) {
-  if (user) {
-    // User is signed in or token was refreshed.
-  }
-});
-
-*/
-  //auth.currentUser.sendEmailVerification();
-
 
