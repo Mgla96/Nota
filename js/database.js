@@ -87,7 +87,10 @@ function passwordReset() {
   console.log(email);
   firebase
     .auth()
-    .sendPasswordResetEmail(email)
+    .sendPasswordResetEmail(email);
+
+   alert("Check your email for password reset link");
+    /*
     .then(function () {
       alert("Check your email to recover your password.");
       console.log("password recovery email sent");
@@ -96,6 +99,7 @@ function passwordReset() {
       console.log(err.code, err.message);
       alert(err.message);
     });
+    */
 }
 
 
