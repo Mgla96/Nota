@@ -10,19 +10,16 @@ const firebaseConfig = {
 };
   firebase.initializeApp(firebaseConfig);
   //var db = firebase.firestore();
-
   var auth = firebase.auth();
-  /*
-  this.firebaseToken = document.querySelector("#firebase-token");
-  this.firebaseToken.innerHTML = "Welcome !";
-  */
 
 
   //User SignUp
   function test(){
    window.alert("test");
   }
+
   function authRegister(event) {
+
     event.preventDefault();
     var registerForm = $("form[name='registerForm']");
     var reg_email = registerForm.find('#register_email').val();
@@ -33,25 +30,12 @@ const firebaseConfig = {
       .createUserWithEmailAndPassword(reg_email, reg_password)
       .then(function (response) {
         alert("Registered successfully! Check your e-mail for account verification!");
-
-        /*
-        var user = firebase.auth().currentUser;
-        user.sendEmailVerification().then(function() {
-          
-        // Email sent.
-        window.alert("test");
-        }).catch(function(error) {
-        // An error happened.
-        window.alert("error");
-        });
-        */
-        //this .firebaseToken.innerHTML = "Registered successfully! Check your e-mail for account verification!";
-        //sendEmailVerification();
+        //user.sendEmailVerification()
       })
       .catch(function(err) {
         alert(err.message);
         console.log(err.code, err.message);
-      })
+      });
   }
   
   // User SignIn
@@ -67,10 +51,8 @@ const firebaseConfig = {
       .signInWithEmailAndPassword(log_email, log_password)
       .then(function () {
         alert("Sign in successful!");
-
-        //this.firebaseToken.innerHTML = "Sign-in Successful!";
-       // console.log('sign in successful !');
-        // outputFirebaseData();
+        
+    
       })
       .catch(function(err) {
         alert(err.message);
@@ -83,13 +65,27 @@ const firebaseConfig = {
   }
 
 
+  /*
+  function sendEmailVerification(data) {
+    var user = firebase.auth().currentUser;
+    var email = data.email || user.email;
+    return user.emailVerified || user.sendEmailVerification({
+      url: window.location.href + '?email=' + user.email,
+    });
+  }
+
+*/
+
+
+
+
   function passwordReset(){
 
     var forgotPasswordForm = $("form[name='forgotPasswordForm']");
     var email = forgotPasswordForm.find('#check_email').val();
+
     //window.alert(email);
     //String emailString = email.toString();
-
     //email var works but this sendPasswordResetEmail function doesn't work some reason
 
     firebase
@@ -116,7 +112,6 @@ const firebaseConfig = {
     });
 
   }
-  
 
 
 
@@ -124,60 +119,20 @@ const firebaseConfig = {
     if(user) {
       window.location = 'index.html'; //After successful login, user will be redirected to home.html
     }
-  });
-/*
 
-  var restaurants = [];
-  db.collection("restaurants")
-    .get()
-    .then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
-        console.log(doc.data());
-        // doc.data() is never undefined for query doc snapshots
-        restaurants.push(doc.data());
-        console.log(restaurants);
-      });
-      RenderRestaurants();
-    })
-    .catch(function(error) {
-      console.log("Error getting documents: ", error);
-    });
-  
-  function RenderRestaurants() {
-    var container = document.getElementById("restaurant-container");
-    container.innerHTML = "";
-    for (i = 0; i < restaurants.length; i++) {
-      htmlstring = `
-      <div class="restaurant m-1 col col-12 col-md-4 col-lg-3 p-0 shadow">
-      <div class="card">
-        <div class="fill">
-          <img
-            class="card-img-top"
-            src="${restaurants[i].image}"
-            alt="Card image cap"
-          />
-        </div>
-        <div class="card-body">
-          <h5 class="card-title">${restaurants[i].name}</h5>
-          <div class="stars pb-2">
-            <i class="fa${restaurants[i].rating<1?'r':''} fa-star "></i>
-            <i class="fa${restaurants[i].rating<2?'r':''} fa-star "></i>
-            <i class="fa${restaurants[i].rating<3?'r':''} fa-star "></i>
-            <i class="fa${restaurants[i].rating<4?'r':''} fa-star "></i>
-            <i class="fa${restaurants[i].rating<5?'r':''} fa-star "></i>
-          </div>
-          <p class="card-text">
-            ${restaurants[i].description}
-          </p>
-          <p class="card-text">
-            <small class="text-muted">Last updated 3 mins ago</small>
-          </p>
-        </div>
-      </div>
-    </div>
-    `;
-      container.innerHTML += htmlstring;
+    if (user.emailVerified) {
+      alert('Email is verified');
     }
-  }
-
-*/
+    else {
+      alert('Email not verified');
+           
+      user.sendEmailVerification().then(function())
+        alert("sent email request");
+       })
+       .catch(function(err) {
+        alert(err.message);
+        
+      });
+      
+    }
+  });
