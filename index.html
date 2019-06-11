@@ -13,14 +13,7 @@
 	</head>
 	<body>
 
-		<nav id="mySidenav" class="nav sidenav">
-			<a href="javascript:void(0)" id="closebtn" onclick="closeNav()">&times;</a>
-			<a class="nav-link active" href="index.html">Home</a>
-			<a class="nav-link" href="selection.html">Browse Notes</a>
-			<a class="nav-link" href="upload.html">Upload</a>
-			<a class="nav-link" href="about.html">Help</a>
-			<a class="nav-link" href="login(typeII).html">Log In</a>
-		</nav>
+		<nav id="mySidenav" class="nav sidenav"></nav>
 
 		<a class="navbar-brand">nota</a>
 
@@ -84,8 +77,8 @@
 		<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
-		<script src="js/navbar.js"></script>
 		<script src="js/database.js"></script>
+		<script src="js/navbar.js"></script>
 
 		<script>
 			var user = firebase.auth().onAuthStateChanged(user => {

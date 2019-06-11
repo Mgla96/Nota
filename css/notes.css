@@ -1,42 +1,4 @@
 /*notes style page*/
-* { box-sizing: border-box; }
-
-body {
-	background-color: #f1f1f1;
-	padding: 20px;
-	font-family: "Poppins";
-}
-
-#notaTitle {
-	font-size: 7vh;
-	font-family: "Playfair Display";
-	margin-top: -40px;
-	color: black;
-	padding-bottom: 0px;
-	padding-top: 0px;
-}
-
-#title {
-	font-family: "Playfair Display";
-	padding-top:0px;
-	font-size: 15vh;
-}
-
-#menu {
-	position: absolute;
-	top: 0px;
-	right: 0px;
-	width: 7vh;
-	height: 7vh;
-	cursor:pointer;
-}
-
-.notesLayout {
-	margin-left:10px;
-	margin-right:10px;
-	margin-bottom:10px;
-}
-
 
 .card {
 	width: 15%;
@@ -67,4 +29,11 @@ body {
 .card-body {
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+.class-info {
+	background-color: #111;
+	color: #f1f1f1;
+	border: 1px solid #f1f1f1;
+	text-align: center;
 }

@@ -42,7 +42,7 @@
   .sidenav a {font-size: 18px;}
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 715px) {
 	#menu {
 		display: none;
 	}

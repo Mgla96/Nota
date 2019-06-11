@@ -23,33 +23,31 @@
 	<body>
 
 		<!--side navigation-->
-		<nav id="mySidenav" class="nav sidenav">
-			<a href="javascript:void(0)" id="closebtn" onclick="closeNav()">&times;</a>
-			<a class="nav-link" href="index.html">Home</a>
-			<a class="nav-link active" href="selection.html">Browse Notes</a>
-			<a class="nav-link" href="upload.html">Upload</a>
-			<a class="nav-link" href="about.html">Help</a>
-			<a class="nav-link" href="login(typeII).html">Log In</a>
-		</nav>
+		<nav id="mySidenav" class="nav sidenav"></nav>
 
 		<a class="navbar-brand mb-0 h1">nota</a>
 
 		<img id="menu" onclick="openNav()" src="images/menu.png">
 
-		<!--author search bar for images-->
-		<form>
-			<div class="form-group row">
-				<label for="staticEmail" style="font-size:15px;" class="col-sm-2 col-form-label">Filter by Author</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="myInput" style="width:50vh;" placeholder="Author name">
-				</div>
-			</div>
-		</form>
 
 		<div id="main">
+			<h2 id="intro"> <center>Notes</center> </h2>
 			<div id="container">
+
+				<div id="class-info" class="row mb-md-2"></div>
+				<div id="class-info2" class="row mb-5"></div>
+				<!--author search bar for images-->
+				<form>
+					<div class="form-group mt-4">
+						<center>
+							<label for="myInput" style="font-size:20px; text-align:center;">Filter by Author</label>
+							<input type="text" class="form-control" id="myInput" style="width:50vh;" placeholder="Author name">
+						</center>
+					</div>
+				</form>
+
 				<div class="row mb-4">
-					<div class="col-md-4" alt="Joe Shmoe">
+					<div class="col-md-4 notes" alt="Joe Shmoe">
 
 						<center>
 							<div class="card" style="width: 18rem;">
@@ -75,7 +73,7 @@
 						</center>
 
 					</div>
-					<div class="col-md-4" alt="John Smith">
+					<div class="col-md-4 notes" alt="John Smith">
 
 						<center>
 							<div class="card" style="width: 18rem;">
@@ -101,8 +99,8 @@
 						</center>
 
 					</div>
-					<div class="col-md-4" alt="Jane Doe">
-					
+					<div class="col-md-4 notes" alt="Jane Doe">
+
 						<center>
 							<div class="card" style="width: 18rem;">
 								<a class="img-card" href="assets/notes-3.pdf">
@@ -141,21 +139,45 @@
 			</div>
 		</div>
 
+		<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
+		<script src="js/database.js"></script>
 		<script src="js/navbar.js"></script>
 
 		<!--script for searching images by date-->
 		<script>
-			$("#myInput").keyup(function() {
-				var str = $.trim(this.value);
-				var val1 = str.replace("/", "");
-				var val = val1.replace("/", "");
-				if (val === "")
-					$('.col-md-4').show();
-				else {
-					$('.col-md-4').hide();
-					$(".col-md-4[alt*=" + val + "]").show();
+			$(document).ready(function() {
+				if(window.location.hash != '') {
+					var days = {
+						1: "Monday",
+						2: "Tuesday",
+						3: "Wednesday",
+						4: "Thursday",
+						5: "Friday"
+					};
+					var hashParams = window.location.hash.substr(1).split('&'); // substr(1) to remove the `#`
+					var course = decodeURIComponent(hashParams[0].split('=')[1]);
+					var professor = decodeURIComponent(hashParams[1].split('=')[1]);
+					var quarter = decodeURIComponent(hashParams[2].split('=')[1]);
+					var week = decodeURIComponent(hashParams[3].split('=')[1]);
+					var day = days[decodeURIComponent(hashParams[4].split('=')[1])];
+					document.getElementById('intro').innerHTML =  '<center>Notes for ' + course + ' </center>';
+					document.getElementById('class-info').innerHTML =	'<div class="col-md-4 class-info">Quarter: '+ quarter +' 2019</div> <div class="col-md-4 class-info">Course: '+ course +'</div> <div class="col-md-4 class-info">Professor: '+ professor +'</div>';
+					document.getElementById('class-info2').innerHTML =	'<div class="col-md-6 class-info">Week: '+ week +'</div> <div class="col-md-6 class-info">Day: '+ day +'</div>';
 				}
 			});
+				$("#myInput").keyup(function() {
+					var str = $.trim(this.value);
+					var val1 = str.replace("/", "");
+					var val = val1.replace("/", "");
+					if (val === "")
+						$('.notes').show();
+					else {
+						$('.notes').hide();
+						$(".notes[alt*=" + val + "]").show();
+					}
+				});
 		</script>
 
 	</body>
