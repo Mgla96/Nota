@@ -8,6 +8,8 @@ const firebaseConfig = {
   messagingSenderId: "131432847743",
   appId: "1:131432847743:web:ac2dae70c0c43677"
 };
+
+
   firebase.initializeApp(firebaseConfig);
   //var db = firebase.firestore();
   var auth = firebase.auth();
@@ -16,6 +18,7 @@ const firebaseConfig = {
   function test(){
    window.alert("test");
   }
+
 
   function authRegister(event) {
     event.preventDefault();
@@ -58,39 +61,25 @@ const firebaseConfig = {
   function outputFirebaseData() {
     this.firebaseToken.innerHTML = "Hello world";
   }
-  /*
-
-  function sendEmailVerification(data) {
-    var user = firebase.auth().currentUser;
-    var email = data.email || user.email;
-    return user.emailVerified || user.sendEmailVerification({
-      url: window.location.href + '?email=' + user.email,
-    });
-  }
-*/
-
+  
 
   function passwordReset(){
-
     var forgotPasswordForm = $("form[name='forgotPasswordForm']");
     var email = forgotPasswordForm.find('#check_email').val();
-
-    //window.alert(email);
-    //String emailString = email.toString();
-    //email var works but this sendPasswordResetEmail function doesn't work some reason
+    console.log(email);
     firebase
-    .auth()
-    .sendPasswordResetEmail(email)
-    .then(function () {
-      alert("Check your email to recover your password.");
-
-    })
-    .catch(function(err) {
-      alert(err.message);
-     
-    });
-
+      .auth()
+      .sendPasswordResetEmail(email)
+      .then(function () {
+        alert("Check your email to recover your password.");
+        console.log("password recovery email sent");
+      })
+      .catch(function(err) {
+        console.log(err.code, err.message);
+        alert(err.message); 
+      });
   }
+
 
   function signOut(){
     firebase.auth().signOut().then(function() {
@@ -98,34 +87,23 @@ const firebaseConfig = {
       console.log('User Logged Out!');
     }).catch(function(error) {
       // An error happened.
-      console.log(error);
+     // console.log(error);
     });
   }
 
-
-
   auth.onAuthStateChanged(user => {
-    /*
-    if(user) {
-      window.location = 'index.html'; //After successful login, user will be redirected to home.html
-    }
-    */
-
-    if (user.emailVerified) {
-      console.log("email verified");
-      window.location = 'index.html'; //After successful login, user will be redirected to home.html
-    }
-    else {
-      //alert('Email not verified');
-
-      auth.currentUser.sendEmailVerification().then(function(){
+    if(!user.emailVerified){
+      user.sendEmailVerification().then(function(){
         console.log("sent email request");
       })
       .catch(function(err){
         console.log(err.message);
       });
 
-      //alert('post email not verified');
+    }
+    else {
+      console.log("email verified");
+      window.location = 'index.html'; //After successful login, user will be redirected to home.html
     }
   });
 
