@@ -18,8 +18,9 @@
 		<nav id="mySidenav" class="nav sidenav">
 			<a href="javascript:void(0)" id="closebtn" onclick="closeNav()">&times;</a>
 			<a class="nav-link" href="index.html">Home</a>
-			<a class="nav-link active" href="selection.html">Search</a>
+			<a class="nav-link active" href="selection.html">Browse Notes</a>
 			<a class="nav-link" href="upload.html">Upload</a>
+			<a class="nav-link" href="about.html">Help</a>
 			<a class="nav-link" href="login(typeII).html">Log In</a>
 		</nav>
 
@@ -145,31 +146,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
-		<script>
-			function openNav() {
-				document.getElementById("mySidenav").style.width = "250px";
-				document.getElementById("main").style.marginRight = "250px";
-				document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-			}
-
-function closeNav() {
-	document.getElementById("mySidenav").style.width = "0";
-	document.getElementById("main").style.marginRight = "0";
-	document.body.style.backgroundColor = "#f1f1f1";
-}
-
-function updateNavWidth(x) {
-	closeNav();
-	if(x.matches) {
-		document.getElementsByClassName('sidenav')[0].style.width = "350px";
-	}
-}
-
-var x = window.matchMedia("(min-width: 576px)");
-updateNavWidth(x);
-x.addListener(updateNavWidth);
-
-		</script>
+		<script src="js/navbar.js"></script>
 		<script>
 			var availableNotes = [
 				[-1, 1, -1, 1, -1],

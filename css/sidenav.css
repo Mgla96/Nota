@@ -50,13 +50,14 @@
 		background-color: unset;
 		position: absolute;
 		height: auto;
-		width: 350px;
+		width: 100%;
 		padding-top: inherit;
 		display: flex;
+		justify-content: flex-end;
 	}
 
 	.sidenav a {
-		padding: 0px 8px 0px 8px;
+		padding: 0px 10px 0px 10px;
 		font-size: 20px;
 		color: #818181;
 		transition: 0.3s;
