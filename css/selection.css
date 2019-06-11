@@ -1,86 +1,52 @@
-/*home style page*/
-body {
-  font-family: "Poppins";
-  background-color: #f1f1f1;
-}
-
-#notaTitle {
-  font-size:10vh;
-  font-family: "Playfair Display";
-  padding-top:0vh;
-  margin-top:-40px;
-  color:black;
-}
-
-#title {
-  font-size: 5vh;
-  color: gray;
-  font-family: "Raleway";
-  margin-left:20vh;
-}
-
-#filler {
-  padding-bottom: 10vh;
-}
-
 /*squares*/
 .fall {
   position: relative;
-  width: 50vh;
-  margin-top:0vh;
 }
 
 .winter {
   position: relative;
-  width: 50vh;
-  margin-top:-28vh;
-  margin-left: 70vh;
 }
 
 .spring {
   position: relative;
-  width: 50vh;
-  margin-top:10vh;
 }
 
 .summer {
   position: relative;
-  width: 50vh;
-  margin-top:-28vh;
-  margin-left: 70vh;
 }
 
 .image {
   display: block;
-  width: 50vh;
+  width: 100%;
   height: auto;
 }
 
 .overlay {
   position: absolute;
-  margin-left: 0.0vh;
   bottom: 0;
   left: 0;
-  right: 0;
-  background-color: red;
-  overflow: hidden;
   width: 0;
   height: 100%;
   transition: .5s ease;
 }
 
 .fall:hover .overlay {
-  width: 50vh;
+  width: 100%;
 }
 
 .winter:hover .overlay {
-  width: 50vh;
+  width: 100%;
 }
 
 .spring:hover .overlay {
-  width: 50vh;
+  width: 100%;
 }
 
 .summer:hover .overlay {
-  width: 50vh;
+  width: 100%;
+}
+
+h4 {
+	margin-top: -40px;
+	margin-bottom: 40px;
 }
