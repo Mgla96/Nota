@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css?family=Muli|Playfair+Display|Poppins|Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/sidenav.css">
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/selection.css">
     <title>Nota</title>
   </head>
@@ -28,25 +27,46 @@
 
 		<img id="menu" onclick="openNav()" src="images/menu.png">
 
-    <div id="main">
-      <div class="container">
-        <h id="title">Choose a quarter to find your class: <br> &nbsp;&nbsp; </h>
 
-        <div class="fall">
-          <a href="fall.html"> <img src="images/fall.png" class="image"> </a>
-          <a href="fall.html"> <div class="overlay" style="background-color: red;"> </div> </a>
+    <div id="main">
+			<h2 id="intro"> <center>Choose a Quarter</center> </h2>
+			<h4> <center>Choose a quarter to find your class</center> </h4>
+
+      <div class="container">
+        <div class="row mb-md-4">
+        	<div class="col-md-6">
+        		<div class="fall">
+        			<a href="fall.html">
+        			  <img src="images/fall.png" class="image">
+        			  <div class="overlay" style="background-color: red;"></div>
+        			</a>
+        		</div>
+        	</div>
+        	<div class="col-md-6">
+						<div class="winter">
+							<a href="winter.html">
+								<img src="images/winter.png" class="image">
+								<div class="overlay" style="background-color: blue;"></div>
+							</a>
+						</div>
+        	</div>
         </div>
-        <div class="winter">
-          <a href="winter.html"> <img src="images/winter.png" class="image"> </a>
-          <a href="winter.html"> <div class="overlay" style="background-color: blue;"> </div> </a>
-        </div>
-        <div class="spring">
-          <a href="spring.html"> <img src="images/spring.png" class="image"> </a>
-          <a href="spring.html"> <div class="overlay" style="background-color: green;"> </div> </a>
-        </div>
-        <div class="summer">
-          <a href="summer.html"> <img src="images/summer.png" class="image"> </a>
-          <a href="summer.html"> <div class="overlay" style="background-color: yellow;"> </div> </a>
+        <div class="row mb-4">
+        	<div class="col-md-6">
+        		<div class="spring">
+        		  <a href="spring.html">
+								<img src="images/spring.png" class="image">
+								<div class="overlay" style="background-color: green;"></div>
+							</a>
+        		</div>
+        	</div>
+        	<div class="col-md-6">
+        		<div class="summer">
+        		  <a href="summer.html"> <img src="images/summer.png" class="image">
+        		  <div class="overlay" style="background-color: yellow;"></div>
+							</a>
+        		</div>
+        	</div>
         </div>
       </div>
   </div>
