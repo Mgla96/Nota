@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -18,7 +19,7 @@
 			<a href="javascript:void(0)" id="closebtn" onclick="closeNav()">&times;</a>
 			<a class="nav-link" href="index.html">Home</a>
 			<a class="nav-link active" href="selection.html">Browse Notes</a>
-			<a class="nav-link" href="upload.html">Upload</a>
+			<a class="nav-link" href="documentList.html">Upload</a>
 			<a class="nav-link" href="about.html">Help</a>
 			<a class="nav-link" href="login(typeII).html">Log In</a>
 		</nav>
@@ -27,9 +28,7 @@
 		<img id="menu" onclick="openNav()" src="images/menu.png">
 
 		<div id="main">
-		<h2 id="intro"> <center>Upload Notes</center> </h2>
-
-		<img id="menu" onclick="openNav()" src="images/menu.png">
+		<h2 id="intro" style="font-size:11vh;"> <center>Upload Notes</center> </h2>
 
 		<div class="container main-container">
 			<div class="row justify-content-center align-items-center main-row mb-5">
@@ -128,13 +127,26 @@
 					</div>
 					<div class="row mb-4">
 						<div class="col-md-12">
-							<button type="submit" onclick="upload();" class="btn btn-secondary btn-lg btn-block mb-4">Upload</button>
+							<form name="form1" action="" method="post" enctype="multipart/form-data">
+								<input type="file" name="f1"> <br>
+								<input class="btn btn-secondary btn-lg btn-block mb-4" type="submit" href="notes.html" style="margin-top:2vh;" name="submit1" value="upload">
+								<a  href="notes.html"> <input class="btn btn-secondary btn-lg btn-block mb-4" style="margin-top:2vh;" name="submit1" value="return"> </a>
+							</form>
 						</div>
 					</div>
 				</div>
 			</div> 
 		</div>
 </div>
+
+<?php
+if(isset($_POST["submit1"]))
+{
+	$fnm=$_FILES["f1"]["name"];
+	$dst="assets/".$fnm;
+	move_uploaded_file($_FILES["f1"]["tmp_name"],$dst);
+}
+?>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
