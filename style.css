@@ -2,11 +2,25 @@
 
 body {
     font-family: "Poppins";
-    background-image: url("lines.jpg");
+    background-color: #f1f1f1 !important;
 }
 
-#background {
-	position:absolute;
+#nota {
+    font-family: 'Playfair Display';
+    margin-left: 2vh;
+    font-size: 15vh;
+  }
+
+#forgotPassword {
+    font-family: 'Poppins';
+    margin-left: 2vh;
+    font-size: 3.3vh;
+}
+
+#enterEmail {
+    margin-left: 2vh;
+    font-size: 2vh;
+    margin-top: 2vh;
 }
 
 .main-head{
@@ -38,7 +52,6 @@ body {
 
 .btn-black{
     background-color: #000 !important;
-    color: #fff;
 }
 
 @media screen and (max-height: 450px) {
