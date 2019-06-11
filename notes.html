@@ -33,48 +33,113 @@
 		<!--nota title in nav bar-->
 		<a class="navbar-brand" id="notaTitle" href="#">nota</a>
 
-		<h2 id="title"> <center>  </center> </h2>
-
 		<!--menu icon-->
-		<img id="menuIcon" onclick="openNav()" src="images/menu.png">
+		<img id="menu" onclick="openNav()" src="images/menu.png">
 
-		<!--date search bar for images-->
+		<!--author search bar for images-->
 		<form>
 			<div class="form-group row">
-				<label for="staticEmail" style="font-size:2vh;" class="col-sm-2 col-form-label"> Enter date: </label>
+				<label for="staticEmail" style="font-size:15px;" class="col-sm-2 col-form-label">Filter by Author</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="myInput" style="width:50vh;" placeholder="mm/dd">
+					<input type="text" class="form-control" id="myInput" style="width:50vh;" placeholder="Author name">
 				</div>
 			</div>
 		</form>
 
-		<!--catalog of all the notes-->
-		<div id="images">
-			<center>
-				<div id="container" style="height:70vh;overflow:auto;background-color:#FAFAFA;">
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="06142019" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Ethereum" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Ripple" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Bitcoin Cash" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Cardano" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="NEM" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="06142020" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Stellar Lumens" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="06142019" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Ethereum" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="06142019" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Ethereum" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Ripple" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Bitcoin Cash" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Cardano" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="NEM" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="06142020" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Stellar Lumens" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="06142019" width=300></a>
-					<a href="https://example.com"><img src="images/notes.png" class="notesLayout" alt="Ethereum" width=300></a>
+		<div id="main">
+			<div id="container">
+				<div class="row mb-4">
+					<div class="col-md-4" alt="Joe Shmoe">
+
+						<center>
+							<div class="card" style="width: 18rem;">
+								<a class="img-card" href="assets/notes-1.pdf">
+									<img class="card-img-top" src="images/notes-preview-1.png">
+								</a>
+								<div class="card-body">
+									<h5 class="card-title">Physics Lecture 3 Notes</h5>
+								</div>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">Author: Joe Shmoe</li>
+									<li class="list-group-item">
+										<p> Rating:
+										<span class="float-center"><i class="text-warning fa fa-star"></i></span>
+										<span class="float-center"><i class="text-warning fa fa-star"></i></span>
+										<span class="float-center"><i class="text-warning fa fa-star"></i></span>
+										<span class="float-center"><i class="text-warning fa fa-star"></i></span>
+										<span class="float-center"><i class="text-warning fa fa-star"></i></span>
+										</p>
+									</li>
+								</ul>
+							</div>
+						</center>
+
+					</div>
+					<div class="col-md-4" alt="John Smith">
+
+						<center>
+							<div class="card" style="width: 18rem;">
+								<a class="img-card" href="assets/notes-2.pdf">
+									<img class="card-img-top" src="images/notes-preview-2.png">
+								</a>
+								<div class="card-body">
+									<h5 class="card-title">Physics Notes 3</h5>
+								</div>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">Author: John Smith</li>
+									<li class="list-group-item">
+										<p> Rating:
+										<span class="float-center"><i class="text-warning fa fa-star"></i></span>
+										<span class="float-center"><i class="text-warning fa fa-star"></i></span>
+										<span class="float-center"><i class="text-warning fa fa-star"></i></span>
+										<span class="float-center"><i class="text-warning far fa-star"></i></span>
+										<span class="float-center"><i class="text-warning far fa-star"></i></span>
+										</p>
+									</li>
+								</ul>
+							</div>
+						</center>
+
+					</div>
+					<div class="col-md-4" alt="Jane Doe">
+					
+						<center>
+							<div class="card" style="width: 18rem;">
+								<a class="img-card" href="assets/notes-3.pdf">
+									<img class="card-img-top" src="images/notes-preview-3.png">
+								</a>
+								<div class="card-body">
+									<h5 class="card-title">Lecture 3 Notes</h5>
+								</div>
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">Author: Jane Doe</li>
+									<li class="list-group-item">
+										<p> Rating:
+										<span class="float-center"><i class="text-warning fa fa-star"></i></span>
+										<span class="float-center"><i class="text-warning fa fa-star"></i></span>
+										<span class="float-center"><i class="text-warning fa fa-star"></i></span>
+										<span class="float-center"><i class="text-warning fa fa-star"></i></span>
+										<span class="float-center"><i class="text-warning far fa-star"></i></span>
+										</p>
+									</li>
+								</ul>
+							</div>
+						</center>
+
+					</div>
 				</div>
-			</center>
-		</div> 
+				<div class="row mb-4">
+					<div class="col-md-4"></div>
+					<div class="col-md-4"></div>
+					<div class="col-md-4"></div>
+				</div>
+				<div class="row mb-4">
+					<div class="col-md-4"></div>
+					<div class="col-md-4"></div>
+					<div class="col-md-4"></div>
+				</div>
+			</div>
+		</div>
 
 		<!--opens and closes side navigation-->
 		<script>
@@ -94,10 +159,10 @@ function closeNav() {
 				var val1 = str.replace("/", "");
 				var val = val1.replace("/", "");
 				if (val === "")
-					$('img').show();
+					$('.col-md-4').show();
 				else {
-					$('img').hide();
-					$("img[alt*=" + val + "]").show();
+					$('.col-md-4').hide();
+					$(".col-md-4[alt*=" + val + "]").show();
 				}
 			});
 		</script>
