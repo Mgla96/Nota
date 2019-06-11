@@ -76,22 +76,22 @@
 					<div class="row mb-4">
 						<div class="col-md-6">
 							<label class="large-label" for="location-input">Course</label>
-							<select id="location-input" class="form-control form-control-md">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
+							<select id="course-input" class="form-control form-control-md">
+								<option>CS 180</option>
+								<option>CS 185</option>
+								<option>Physics 1</option>
+								<option>CS 184</option>
+								<option>Math 4A</option>
 							</select>
 						</div>
 						<div class="col-md-6">
 							<label class="large-label" for="location-input">Professor</label>
-							<select id="location-input" class="form-control form-control-md">
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
+							<select id="professor-input" class="form-control form-control-md">
+								<option>Linqi Yan</option>
+								<option>Tobias Hollerer</option>
+								<option>Ernest Freund</option>
+								<option>Sebastian</option>
+								<option>Shaya Shakerian</option>
 							</select>
 						</div>
 					</div>
@@ -150,6 +150,15 @@ function closeNav() {
 function upload() {
 
 }
+		</script>
+		<script>
+
+			var hashParams = window.location.hash.substr(1).split('&'); // substr(1) to remove the `#`
+for(var i = 0; i < hashParams.length; i++){
+	var p = hashParams[i].split('=');
+	document.getElementById(p[0]).value = decodeURIComponent(p[1]);;
+}
+
 		</script>
 	</body>
 </html>
