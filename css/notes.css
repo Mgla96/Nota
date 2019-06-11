@@ -2,37 +2,69 @@
 * { box-sizing: border-box; }
 
 body {
-  background-color: #f1f1f1;
-  padding: 20px;
-  font-family: "Poppins";
+	background-color: #f1f1f1;
+	padding: 20px;
+	font-family: "Poppins";
 }
 
 #notaTitle {
-  font-size: 7vh;
-  font-family: "Playfair Display";
-  margin-top: -40px;
-  color: black;
-  padding-bottom: 0px;
-  padding-top: 0px;
+	font-size: 7vh;
+	font-family: "Playfair Display";
+	margin-top: -40px;
+	color: black;
+	padding-bottom: 0px;
+	padding-top: 0px;
 }
 
 #title {
-  font-family: "Playfair Display";
-  padding-top:0px;
-  font-size: 15vh;
+	font-family: "Playfair Display";
+	padding-top:0px;
+	font-size: 15vh;
 }
 
-#menuIcon {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 7vh;
-  height: 7vh;
-  cursor:pointer;
+#menu {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 7vh;
+	height: 7vh;
+	cursor:pointer;
 }
 
 .notesLayout {
-  margin-left:10px;
-  margin-right:10px;
-  margin-bottom:10px;
+	margin-left:10px;
+	margin-right:10px;
+	margin-bottom:10px;
+}
+
+
+.card {
+	width: 15%;
+	min-width: 100px;
+	display: block; 
+	margin-bottom: 20px;
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); 
+	transition: box-shadow .25s; 
+}
+.card:hover {
+	box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.img-card {
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	display: block;
+	overflow: hidden;
+}
+.img-card img{
+	width: 100%;
+	height: 400px;
+	object-fit: contain; 
+	transition: all .25s ease;
+} 
+
+.card-body {
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
