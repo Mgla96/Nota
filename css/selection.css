@@ -1,6 +1,7 @@
 /*home style page*/
 body {
   font-family: "Poppins";
+  background-color: #f1f1f1;
 }
 
 #notaTitle {
@@ -14,17 +15,11 @@ body {
 #title {
   font-size: 5vh;
   color: gray;
-  margin-left: 35vh;
   font-family: "Raleway";
 }
 
-#menu {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: 9vh;
-  height: 9vh;
-  cursor:pointer;
+#filler {
+  padding-bottom: 10vh;
 }
 
 /*squares*/
@@ -32,28 +27,26 @@ body {
   position: relative;
   width: 50vh;
   margin-top:0vh;
-  margin-left: 30vh;
 }
 
 .winter {
   position: relative;
   width: 50vh;
   margin-top:-28vh;
-  margin-left: 100vh;
+  margin-left: 70vh;
 }
 
 .spring {
   position: relative;
   width: 50vh;
   margin-top:10vh;
-  margin-left: 30vh;
 }
 
 .summer {
   position: relative;
   width: 50vh;
   margin-top:-28vh;
-  margin-left: 100vh;
+  margin-left: 70vh;
 }
 
 .image {
