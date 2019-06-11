@@ -60,10 +60,10 @@
 					</div>
 					<div class="col-md-6">
 						<div class="jumbotron">
-							<h1 class="display-4">Log in</h1>
-							<p class="lead">Logging in allows you to upload, organize and share your own notes on Nota.</p>
+							<h1 class="display-4" id="welcomeHeader">Log in</h1>
+							<p class="lead" id="welcomeComment">Logging in allows you to upload, organize and share your own notes on Nota.</p>
 							<p class="lead">
-							<a class="btn btn-secondary btn-lg" href="login(typeII).html" role="button">Log in or Register</a>
+							<a id="welcomeButton" class="btn btn-secondary btn-lg" href="login(typeII).html" role="button">Log in or Register</a>
 							</p>
 						</div>
 
@@ -77,6 +77,34 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+
+
+		<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-firestore.js"></script>
 		<script src="js/navbar.js"></script>
+		<script src="js/database.js"></script>
+
+		<script>
+			var user = firebase.auth().onAuthStateChanged(user => {
+			if (user) {
+				console.log("user logged in index");
+			  // User is signed in.
+			  document.getElementById("welcomeHeader").innerHTML = "Welcome!";
+			  document.getElementById("welcomeComment").innerHTML = "You are successfully signed in. You can now upload and download notes.";
+			  document.getElementById("welcomeButton").innerHTML = "Sign Out";
+			  document.getElementById("welcomeButton").href = "";
+			  document.getElementById("welcomeButton").onclick=signOut;
+			} else {
+			  // No user is signed in.
+			  console.log("no user is signed in");
+			
+			}
+		});
+		
+		
+		</script>
 	</body>
 </html>
