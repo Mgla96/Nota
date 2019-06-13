@@ -11,7 +11,11 @@ $(document).ready(() => {
     if (elem != null) {
       elem.classList.add('active');
     } else {
-      document.getElementById('browse').classList.add('active');
+      if(window.location.pathname == '/'){
+        document.getElementById('home').classList.add('active');
+      } else {
+        document.getElementById('browse').classList.add('active');
+      }
     }
   });
 });
